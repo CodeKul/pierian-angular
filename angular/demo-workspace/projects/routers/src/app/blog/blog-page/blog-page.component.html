@@ -1,10 +1,10 @@
-<form class="form-horizontal">
+<form class="form-horizontal" [formGroup]="fg" (ngSubmit)="onSub()">
     <fieldset>
         <div class="control-group">
             <!-- Username -->
             <label class="control-label" for="username">Username</label>
             <div class="controls">
-                <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
+                <input type="text" formControlName="usNm" placeholder="User Name" class="input-xlarge">
                 <p class="help-block">Username can contain any letters or numbers, without spaces</p>
             </div>
         </div>
@@ -13,7 +13,7 @@
             <!-- E-mail -->
             <label class="control-label" for="email">E-mail</label>
             <div class="controls">
-                <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                <input type="text" formControlName="eml" placeholder="" class="input-xlarge">
                 <p class="help-block">Please provide your E-mail</p>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <!-- Password-->
             <label class="control-label" for="password">Password</label>
             <div class="controls">
-                <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                <input type="password" formControlName="pass" placeholder="" class="input-xlarge">
                 <p class="help-block">Password should be at least 4 characters</p>
             </div>
         </div>
@@ -31,7 +31,7 @@
             <!-- Password -->
             <label class="control-label" for="password_confirm">Password (Confirm)</label>
             <div class="controls">
-                <input type="password" id="password_confirm" name="password_confirm" placeholder=""
+                <input type="password" name="password_confirm" placeholder=""
                     class="input-xlarge">
                 <p class="help-block">Please confirm password</p>
             </div>
@@ -40,7 +40,7 @@
         <div class="control-group">
             <!-- Button -->
             <div class="controls">
-                <button class="btn btn-success">Register</button>
+                <button type="submit" class="btn btn-success">Register</button>
             </div>
         </div>
     </fieldset>

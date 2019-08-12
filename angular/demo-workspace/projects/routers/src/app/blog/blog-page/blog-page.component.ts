@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { Reg } from './blog-reg-domain';
 
 @Component({
   selector: 'app-blog-page',
@@ -20,4 +21,13 @@ export class BlogPageComponent implements OnInit {
       pass: this.fb.control('')
     })
   }
+
+  onSub() {
+    console.log(this.fg)
+    console.log(this.fg.value)
+
+    let regDmn = this.fg.value as Reg
+  }
 }
+
+
