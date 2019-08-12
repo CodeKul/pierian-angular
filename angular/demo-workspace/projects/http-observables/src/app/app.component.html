@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="button" class="btn btn-info" value="Single User" (click)="onSingleUser()">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" [src]="singleUsrDto?.data?.avatar" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{singleUsrDto?.data?.first_name}} {{singleUsrDto?.data?.last_name}}</h5>
+                    <a href="#" class="btn btn-primary">{{singleUsrDto?.data?.email}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
