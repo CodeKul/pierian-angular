@@ -52,11 +52,9 @@
             <input type="button" class="btn btn-info" value="Dynamic" (click)="onDyna()">
         </div>
     </div>
-    <div class="row" formControlArray="dyna" *ngFor="let dy of fg.controls.dyna?.value; let ind = index;">
+    <div class="row" formArrayName="dyna" *ngFor="let dy of fg.controls.dyna?.value; let ind = index;">
         <div class="col-md-12">
-            <ng-container [formControlName]="ind">
-                <input placeholder="mobile">
-            </ng-container>
+            <input placeholder="mobile" [formControlName]="ind">
         </div>
     </div>
 </form>
