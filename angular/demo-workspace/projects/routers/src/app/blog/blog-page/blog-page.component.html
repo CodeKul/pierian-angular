@@ -1,11 +1,11 @@
-<form class="form-horizontal" [formGroup]="fg" (ngSubmit)="onSub()">
+<form class="form-horizontal" [formGroup]="fg" (ngSubmit)="onSub(conPass.value)">
     <fieldset>
         <div class="control-group">
             <!-- Username -->
             <label class="control-label" for="username">Username</label>
             <div class="controls">
                 <input type="text" formControlName="usNm" placeholder="User Name" class="input-xlarge">
-                <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                <p *ngIf="!fg.controls.usNm.valid" class="help-block">Username can contain any letters or numbers, without spaces</p>
             </div>
         </div>
 
@@ -14,7 +14,8 @@
             <label class="control-label" for="email">E-mail</label>
             <div class="controls">
                 <input type="text" formControlName="eml" placeholder="" class="input-xlarge">
-                <p class="help-block">Please provide your E-mail</p>
+                <p *ngIf="fg.controls.eml.errors?.required" class="help-block">Please provide your E-mail</p>
+                <p *ngIf="fg.controls.eml.errors?.email" class="help-block">Please provide proper E-mail</p>
             </div>
         </div>
 
@@ -23,7 +24,7 @@
             <label class="control-label" for="password">Password</label>
             <div class="controls">
                 <input type="password" formControlName="pass" placeholder="" class="input-xlarge">
-                <p class="help-block">Password should be at least 4 characters</p>
+                <p *ngIf="!fg.controls.pass.valid" class="help-block">Password should be at least 4 characters</p>
             </div>
         </div>
 
@@ -31,9 +32,9 @@
             <!-- Password -->
             <label class="control-label" for="password_confirm">Password (Confirm)</label>
             <div class="controls">
-                <input type="password" name="password_confirm" placeholder=""
+                <input #conPass type="password" name="password_confirm" placeholder=""
                     class="input-xlarge">
-                <p class="help-block">Please confirm password</p>
+                <p *ngIf="!isConPass" class="help-block">Invalid confirm Password</p>
             </div>
         </div>
 
