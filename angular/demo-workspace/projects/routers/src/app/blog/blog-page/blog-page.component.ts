@@ -1,5 +1,6 @@
+import { BlogValidator } from './../my-validator';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators, FormArray } from '@angular/forms';
 import { Reg } from './blog-reg-domain';
 
 @Component({
@@ -17,15 +18,27 @@ export class BlogPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    let usNmComp = Validators.compose([
+      Validators.required,
+      BlogValidator.custValidator
+    ])
+
     let emVlCmp = Validators.compose([
       Validators.required,
       Validators.email
     ])
+
     this.fg = this.fb.group({
-      usNm: this.fb.control('', Validators.required),
+      usNm: this.fb.control('', usNmComp),
       eml: this.fb.control('', emVlCmp),
-      pass: this.fb.control('', Validators.required)
+      pass: this.fb.control('', Validators.required),
+      dyna: this.fb.array([])
     })
+  }
+
+  onDyna() {
+    let dynaArr = this.fg.controls.dyna as FormArray
+    dynaArr.push(this.fb.control(''))
   }
 
   onSub(conPass: string) {

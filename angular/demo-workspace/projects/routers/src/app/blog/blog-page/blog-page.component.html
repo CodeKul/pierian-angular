@@ -5,7 +5,9 @@
             <label class="control-label" for="username">Username</label>
             <div class="controls">
                 <input type="text" formControlName="usNm" placeholder="User Name" class="input-xlarge">
-                <p *ngIf="!fg.controls.usNm.valid" class="help-block">Username can contain any letters or numbers, without spaces</p>
+                <p *ngIf="fg.controls.usNm.errors?.required" class="help-block">Username can contain any letters or
+                    numbers, without spaces</p>
+                <p *ngIf="fg.controls.usNm.errors?.isStartA" class="help-block">Username Should start from a or A</p>
             </div>
         </div>
 
@@ -32,8 +34,7 @@
             <!-- Password -->
             <label class="control-label" for="password_confirm">Password (Confirm)</label>
             <div class="controls">
-                <input #conPass type="password" name="password_confirm" placeholder=""
-                    class="input-xlarge">
+                <input #conPass type="password" name="password_confirm" placeholder="" class="input-xlarge">
                 <p *ngIf="!isConPass" class="help-block">Invalid confirm Password</p>
             </div>
         </div>
@@ -45,4 +46,17 @@
             </div>
         </div>
     </fieldset>
+
+    <div class="row">
+        <div class="col-md-12">
+            <input type="button" class="btn btn-info" value="Dynamic" (click)="onDyna()">
+        </div>
+    </div>
+    <div class="row" formControlArray="dyna" *ngFor="let dy of fg.controls.dyna?.value; let ind = index;">
+        <div class="col-md-12">
+            <ng-container [formControlName]="ind">
+                <input placeholder="mobile">
+            </ng-container>
+        </div>
+    </div>
 </form>
