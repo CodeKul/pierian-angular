@@ -6,13 +6,17 @@ import { BlogPageComponent } from './blog-page/blog-page.component';
 import { BlogRoutingModule } from './blog.routing';
 import { ReqResService } from './req-res.service';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [BlogPageComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BlogRoutingModule
+    BlogRoutingModule,
+    
+    NgbModule
   ],
   providers: [ReqResService],
   exports: [BlogPageComponent]
