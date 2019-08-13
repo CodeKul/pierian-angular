@@ -7,6 +7,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CustDialogComponent } from './cust-dialog.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ChartComponent } from './chart/chart.component';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ChartComponent } from './chart/chart.component';
 
     NgbModule,
     Ng2SmartTableModule,
+    AngularFileUploaderModule
   ],
   providers: [],
   entryComponents : [CustDialogComponent],

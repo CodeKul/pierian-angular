@@ -15,7 +15,9 @@ export class ReqResService {
   }
 
   singleUser(id : number) {
-    return this.http.get(`https://reqres.in/api/users/${id}`)
+    //return this.http.get(`https://reqres.in/api/users/${id}`)
+
+    return this.http.get(`http://localhost:8080/greeting`)
   }
 
   createUser() {

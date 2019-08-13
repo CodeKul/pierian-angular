@@ -11,6 +11,12 @@ import { DataSource } from 'ng2-smart-table/lib/lib/data-source/data-source';
 export class AppComponent {
   title = 'utilities';
 
+  afuConfig = {
+    uploadAPI: {
+      url: "https://example-file-upload-api"
+    }
+  };
+
   settings = {
     columns: {
       id: {
