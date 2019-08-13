@@ -16,8 +16,6 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(eml: string, pass: string) {
-
-    
     this.router.navigate(['dash'])
   }
 }

@@ -20,10 +20,10 @@ import { Route } from '@angular/compiler/src/core';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule) },
-  { path: 'blog', loadChildren: () => import('./blog/blog.module').then(mod => mod.BlogModule) },
+  // { path: 'blog', loadChildren: () => import('./blog/blog.module').then(mod => mod.BlogModule) },
   { path: 'dash', loadChildren: () => import('./dash/dash.module').then(mod => mod.DashModule) },
-  { path: 'events', loadChildren: () => import('./events/events.module').then(mod => mod.EventsModule) },
-  { path: 'resources', loadChildren: () => import('./resources/resources.module').then(mod => mod.ResourcesModule) }
+  // { path: 'events', loadChildren: () => import('./events/events.module').then(mod => mod.EventsModule) },
+  // { path: 'resources', loadChildren: () => import('./resources/resources.module').then(mod => mod.ResourcesModule) }
 ]
 
 @NgModule({
