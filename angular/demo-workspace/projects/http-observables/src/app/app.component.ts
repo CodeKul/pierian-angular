@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
   singleUsrDto: SingleUserDto
 
   constructor(
-    private obs: ObsService,
     private rqrs: ReqResService
   ) {
 

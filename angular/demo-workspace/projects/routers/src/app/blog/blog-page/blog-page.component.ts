@@ -2,6 +2,7 @@ import { BlogValidator } from './../my-validator';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators, FormArray } from '@angular/forms';
 import { Reg } from './blog-reg-domain';
+import { ReqResService } from '../req-res.service';
 
 @Component({
   selector: 'app-blog-page',
@@ -14,7 +15,8 @@ export class BlogPageComponent implements OnInit {
   isConPass: boolean = false
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private reqRes: ReqResService
   ) { }
 
   ngOnInit() {
@@ -45,9 +47,16 @@ export class BlogPageComponent implements OnInit {
     console.log(this.fg)
     console.log(this.fg.value)
 
-
     let regDmn = this.fg.value as Reg
     this.isConPass = (conPass == regDmn.pass)
+
+    this.reqRes.createUser(regDmn).subscribe(res => {
+      console.log(res)
+      // 2xx - request sent from client and received by server, server processed it and sent back success response
+      // 3xx - redirection
+      // 4xx - releated resource and request payload errors
+      // 5xx - internal server error
+    })
   }
 }
 

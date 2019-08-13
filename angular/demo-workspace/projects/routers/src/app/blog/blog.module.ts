@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,8 @@ import { BlogPageComponent } from './blog-page/blog-page.component';
   declarations: [BlogPageComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   exports: [BlogPageComponent]
