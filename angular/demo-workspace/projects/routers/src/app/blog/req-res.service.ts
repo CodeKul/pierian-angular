@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Reg } from './blog-page/blog-reg-domain';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ReqResService {
 
   constructor(

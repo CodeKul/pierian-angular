@@ -19,11 +19,11 @@ import { DashModule } from './dash/dash.module';
     
     AppRoutingModule,
     
-    BlogModule,
-    EventsModule,
-    ResourcesModule,
-    LoginModule,
-    DashModule
+    // BlogModule,
+    // EventsModule,
+    // ResourcesModule,
+    // LoginModule,
+    // DashModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,15 +3,18 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
 import { BlogPageComponent } from './blog-page/blog-page.component';
+import { BlogRoutingModule } from './blog.routing';
+import { ReqResService } from './req-res.service';
 
 @NgModule({
   declarations: [BlogPageComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BlogRoutingModule
   ],
-  providers: [],
+  providers: [ReqResService],
   exports: [BlogPageComponent]
 })
 export class BlogModule { }
